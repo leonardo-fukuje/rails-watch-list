@@ -2,14 +2,15 @@
     <h1>WatchList</h1>
 </header>
 
- <h2>Movie Lists</h2>
-  <ul>
+<%# MOVIE LIST %>
     <% @lists.each do |list| %>
-      <li>
+        <div class="card" style="width: 18rem;">
+  <%= cl_image_tag list.photo.key, class:"card-img-top img-thumbnail img", alt:"Card image cap", height: 300, width: 400, crop: :fill %>
+  <div class="card-body">
         <%= link_to list.name, list_path(list) %>
-      </li>
+  </div>
+</div>
     <% end %>
-    <li class="add-list">
+
+
       <%= link_to 'add list', new_list_path %>
-    </li>
-  </ul>
