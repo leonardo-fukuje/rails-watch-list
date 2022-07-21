@@ -1,8 +1,5 @@
 <%= render "banner" %>
 
-<p>
-
-</p>
 
 <div class="container text-center">
   <header class="my-5 pb-3  ">
@@ -20,7 +17,7 @@
         <% if list.photo.attached? %>
             <%= cl_image_tag list.photo.key, class:"card-img-top img-thumbnail img", alt:"Card image cap", height: 300, width: 400, crop: :fill %>
         <% else %>
-            <%= image_tag('banner.jpg') %>
+            <%= image_tag('istockphoto.jpg') %>
         <% end %>
         <div class="card-body pb-5 mb-3">
           <%= link_to list.name, list_path(list), class:"link" %>
