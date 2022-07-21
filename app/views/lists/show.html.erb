@@ -12,9 +12,9 @@
         <%= link_to 'Back', lists_path(@list), class: "btn btn-ghost-square"  %>
   </div>
 
-  <div class="mb-5 cards mx-5">
+  <div class=" mb-5 cards mr-5">
     <% @bookmarks.each do |bookmark| %>
-      <div class="card  mx-5 my-3"4 style="width: 20rem;">
+      <div class="card  mx-5 my-3"4 style="width: 25rem;">
         <%= image_tag bookmark.movie.poster_url, class:"card-img-top rounded img-thumbnail img" %>
         <div class="card-body pb-5">
           <strong><h3 class="text-center"><%= bookmark.movie.title %></strong>
