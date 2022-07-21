@@ -8,8 +8,9 @@
             </div>
           <%= simple_form_for [@list, @bookmark] do |f| %>
             <%= f.input :comment, placeholder: 'Enter a comment about the movie' %>
-            <%= f.association :movie, prompt: 'Select a movie', input_html: { class: 'select2' } %>
-            <%= f.submit class: 'btn btn-flat' %>
+            <%= f.association :movie, prompt: 'Select a movie'%>
+            <%= f.submit class: 'btn-ghost-square-blue' %>
+             <%= link_to 'Back', lists_path(@list), class: "btn btn-ghost-square mb-1"  %>
           <% end %>
         </div>
       </div>

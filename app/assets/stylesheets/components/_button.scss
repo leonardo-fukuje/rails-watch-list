@@ -21,6 +21,18 @@
   transition: opacity 0.3s ease;
 }
 
+.btn-ghost-square-big {
+  color: white;
+  background-color: #3A3939;
+  border: 1px solid #3A3939;
+  padding: 10px 25px;
+  font-weight: lighter;
+  transition: opacity 0.3s ease;
+  &:hover {
+    color: white;
+    opacity: .5;}
+}
+
 .btn-ghost-square-blue {
   color: #0050a1;
   border: 1px solid #0050a1;
@@ -76,4 +88,12 @@
 .btn-gradient:hover {
   background: linear-gradient(#147EFF, #0F67DA);
   color: white;
+}
+
+.btn-x{
+ text-decoration: none;
+ transition: .5s;
+ &:hover {
+  opacity: .5;
+  }
 }

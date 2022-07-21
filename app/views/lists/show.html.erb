@@ -8,21 +8,26 @@
       <%= button_to "Delete list",
                             list_path(@list),
                             method: :delete,
-                            data: { confirm: "Are you sure?" }, class: "btn btn-ghost-square-red mx-3" %>
+                            data: { confirm: "Are you sure you want to delete the '#{@list.name}' list ?" }, class: "btn btn-ghost-square-red mx-3" %>
         <%= link_to 'Back', lists_path(@list), class: "btn btn-ghost-square"  %>
-
   </div>
 
-  <div class=" justify-content-center mb-5 cards mx-5">
+  <div class="mb-5 cards mx-5">
     <% @bookmarks.each do |bookmark| %>
-      <div class="card  mx-5 my-4"4 style="width: 20rem;">
+      <div class="card  mx-5 my-3"4 style="width: 20rem;">
         <%= image_tag bookmark.movie.poster_url, class:"card-img-top rounded img-thumbnail img" %>
         <div class="card-body pb-5">
-          <strong><h3><%= bookmark.movie.title %></strong>
+          <strong><h3 class="text-center"><%= bookmark.movie.title %></strong>
            <small><p><%= "⭐#{bookmark.movie.rating.to_i}/10" %></p></h3></small>
-          <p><%= bookmark.movie.overview %></p>
-          <h4><em>"<%= bookmark.comment %>"</em></h4>
+          <p class="text-center"><%= bookmark.movie.overview %></p>
+          <div class="d-flex "><h4><em>"<%= bookmark.comment %>"</em></h4>
+            <%= link_to "❌",
+            bookmark_path(bookmark),
+            method: :delete,
+            data: { confirm: "Are you sure you want to delete '#{bookmark.movie.title}'?" },
+            class:"text-end btn-x flex-grow-1 " %>
+          </div>
+
         </div>
       </div>
     <% end %>
-  </div>
