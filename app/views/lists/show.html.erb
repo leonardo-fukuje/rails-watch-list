@@ -1,22 +1,23 @@
-<div class="container">
-  <h1 class="container text-center mt-5 mb-5"><%= @list.name %></h1>
+<div class="mb-3 card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path(@list.photo.key) if @list.photo.attached?%>)">
+  <h1 class="title"><%= @list.name %></h1>
+</div>
 
-    <div class="d-flex justify-content-end mb-5">
-    <%= link_to 'Add a bookmark', new_list_bookmark_path(@list), class: "btn btn-primary"  %>
+<div>
+    <div class="d-flex justify-content-end mb-5 mt-4 mx-3">
+    <%= link_to 'Add a bookmark', new_list_bookmark_path(@list), class: "btn btn-ghost-square-blue"  %>
       <%= button_to "Delete list",
                             list_path(@list),
                             method: :delete,
-                            data: { confirm: "Are you sure?" }, class: "btn btn-danger mx-3" %>
-        <%= link_to 'Back', lists_path(@list), class: "btn btn-secondary"  %>
+                            data: { confirm: "Are you sure?" }, class: "btn btn-ghost-square-red mx-3" %>
+        <%= link_to 'Back', lists_path(@list), class: "btn btn-ghost-square"  %>
 
   </div>
 
-
-  <div class="d-flex justify-content-around">
+  <div class=" justify-content-center mb-5 cards mx-5">
     <% @bookmarks.each do |bookmark| %>
-      <div class="card text-center" style="width: 25rem;">
+      <div class="card  mx-5 my-4"4 style="width: 20rem;">
         <%= image_tag bookmark.movie.poster_url, class:"card-img-top rounded img-thumbnail img" %>
-        <div class="card-body">
+        <div class="card-body pb-5">
           <strong><h3><%= bookmark.movie.title %></strong>
            <small><p><%= "⭐#{bookmark.movie.rating.to_i}/10" %></p></h3></small>
           <p><%= bookmark.movie.overview %></p>
@@ -25,6 +26,3 @@
       </div>
     <% end %>
   </div>
-
-</div>
-

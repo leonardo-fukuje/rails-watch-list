@@ -1,11 +1,13 @@
-<div class="container py-5">
-        <h3>Create a new list</h3>
-        <%= simple_form_for @list do |f| %>
-          <%= f.input :name, placeholder: 'Drama' %>
-          <%= f.input :photo, as: :file%>
-          <%= f.submit  %>
-        <% end %>
+<%= render "banner" %>
 
-</div>
-
-
+  <div class="container py-5 reduce">
+            <div class="header mb-5">
+                <h3 style="color: white">Create a New List</h3>
+            </div>
+          <%= simple_form_for @list do |f| %>
+            <%= f.input :name, placeholder: 'Drama' %>
+            <%= f.input :photo, as: :file, class: 'mb-5'%>
+            <%= f.submit class: 'btn-ghost-square  mt-3 '  %>
+            <%= link_to 'Back', lists_path(@list), class: "btn btn-ghost-square mb-1 mx-4"  %>
+          <% end %>
+  </div>

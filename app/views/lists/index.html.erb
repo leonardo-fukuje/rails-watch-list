@@ -1,20 +1,24 @@
+<%= render "banner" %>
+
 <div class="container text-center">
-  <header class="my-3">
-      <h1>WatchList</h1>
+  <header class="my-5 pb-5">
+      <div class="header">
+        <h1 style="color: white">My Lists</h1>
+      </div>
   </header>
 
   <%# MOVIE LIST %>
-  <div class="d-flex justify-content-center mb-5 mt-5">
+  <div class=" justify-content-center mb-5 cards ">
     <% @lists.each do |list| %>
-      <div class="card mx-3" style="width: 18rem;">
-        <%= cl_image_tag list.photo.key, class:"card-img-top img-thumbnail img", alt:"Card image cap", height: 300, width: 400, crop: :fill %>
-        <div class="card-body">
-          <%= link_to list.name, list_path(list) %>
+      <div class="card card-category mx-5 my-5" style="width: 18rem;">
+         <%= cl_image_tag list.photo.key, class:"card-img-top img-thumbnail img", alt:"Card image cap", height: 300, width: 400, crop: :fill %>
+        <div class="card-body pb-5">
+          <%= link_to list.name, list_path(list), class:"link" %>
         </div>
       </div>
     <% end %>
   </div>
 
-  <%= link_to 'add list', new_list_path %>
+  <%= link_to "Add a list", new_list_path, class: "mb-5 btn btn-ghost-square" %>
 
 </div>
