@@ -16,7 +16,7 @@
 .cards {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 16px;
+  grid-gap: 12px;
 }
 
 .link {
@@ -41,6 +41,7 @@
 @media (min-width: 100px) and (max-width: 575px) {
   .cards {
     grid-template-columns: 1fr;
+    justify-items: center;
   }
 }
 
@@ -48,6 +49,7 @@
 @media (min-width: 576px) {
   .cards {
     grid-template-columns: 1fr;
+    justify-items: center;
   }
 }
 

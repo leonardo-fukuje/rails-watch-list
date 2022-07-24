@@ -12,3 +12,14 @@ legend ~ div.form-check:first-of-type {
 .reduce{
   width: 450px;
 }
+
+@media (max-width: 500px)
+{
+  .reduce{
+    width: 350px;
+  }
+
+  .reduce-1{
+    width: 350px;
+  }
+}

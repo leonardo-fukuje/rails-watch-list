@@ -97,3 +97,28 @@
   opacity: .5;
   }
 }
+
+.responsive-1{
+  width:550px;
+  padding:10px;
+ }
+
+@media (max-width: 500px)
+{
+ .responsive{
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  align-items: center;
+
+ }
+
+ .responsive-1{
+  width:350px;
+  padding:10px;
+ }
+
+ .flex-gap{
+  margin-top: 10px;
+ }
+}

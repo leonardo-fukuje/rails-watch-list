@@ -3,18 +3,18 @@
 </div>
 
 <div>
-    <div class="d-flex justify-content-end mb-5 mt-4 mx-3">
-    <%= link_to 'Add a bookmark', new_list_bookmark_path(@list), class: "btn btn-ghost-square-blue"  %>
+    <div class="d-flex responsive justify-content-end mb-5 mt-4 mx-3">
+    <%= link_to 'Add a bookmark', new_list_bookmark_path(@list), class: "flex-gap btn btn-ghost-square-blue"  %>
       <%= button_to "Delete list",
                             list_path(@list),
                             method: :delete,
-                            data: { confirm: "Are you sure you want to delete the '#{@list.name}' list ?" }, class: "btn btn-ghost-square-red mx-3" %>
-        <%= link_to 'Back', lists_path(@list), class: "btn btn-ghost-square"  %>
+                            data: { confirm: "Are you sure you want to delete the '#{@list.name}' list ?" }, class: "flex-gap btn btn-ghost-square-red mx-3" %>
+        <%= link_to 'Back', lists_path(@list), class: "flex-gap btn btn-ghost-square"  %>
   </div>
 
-  <div class=" mb-5 cards mr-5">
+  <div class="container responsive mb-5 cards">
     <% @bookmarks.each do |bookmark| %>
-      <div class="card  mx-5 my-3"4 style="width: 25rem;">
+      <div class="card  mx-5 my-3"4 style="width: 23rem;">
         <%= image_tag bookmark.movie.poster_url, class:"card-img-top rounded img-thumbnail img" %>
         <div class="card-body pb-5">
           <strong><h3 class="text-center"><%= bookmark.movie.title %></strong>
@@ -29,5 +29,6 @@
           </div>
 
         </div>
-      </div>
+
+</div>
     <% end %>

@@ -1,32 +1,33 @@
 <%= render "banner" %>
 
-
-<div class="container text-center">
-  <header class="my-5 pb-3  ">
-      <div class="header">
-        <h1 style="color: white"><span data-controller="typed-js"></span></h1>
-      </div>
-  </header>
-
-  <div class="mb-5 font-work ">
-  </div>
-  <%# MOVIE LIST %>
-  <div class="mx-5 px-2 cards ">
-    <% @lists.each do |list| %>
-      <div class="card card-category mx-5 my-5" style="width: 18rem;">
-        <% if list.photo.attached? %>
-            <%= cl_image_tag list.photo.key, class:"card-img-top img-thumbnail img", alt:"Card image cap", height: 300, width: 400, crop: :fill %>
-        <% else %>
-            <%= image_tag('istockphoto.jpg') %>
-        <% end %>
-        <div class="card-body pb-5 mb-3">
-          <%= link_to list.name, list_path(list), class:"link" %>
+<div class= "d-flex">
+  <div class="container text-center">
+    <header class="my-5 pb-3  ">
+        <div class="header">
+          <h1 style="color: white"><span data-controller="typed-js"></span></h1>
         </div>
-      </div>
-    <% end %>
+    </header>
+
+    <div class=" mb-5 font-work ">
+    </div>
+    <%# MOVIE LIST %>
+    <div class="cards">
+      <% @lists.each do |list| %>
+        <div class="card card-category mx-4 my-5" style="width: 18rem;">
+          <% if list.photo.attached? %>
+              <%= cl_image_tag list.photo.key, class:"card-img-top img-thumbnail img", alt:"Card image cap", height: 300, width: 400, crop: :fill %>
+          <% else %>
+              <%= image_tag('istockphoto.jpg') %>
+          <% end %>
+          <div class="card-body pb-5 mb-3">
+            <%= link_to list.name, list_path(list), class:"link" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
+    <%= link_to "Add a list", new_list_path, style:"font-size:1.3em; font-family: 'Cormorant SC', serif;
+  ", class: " btn btn-ghost-square-big mb-5 float-center" %>
+
   </div>
-
-  <%= link_to "Add a list", new_list_path, style:"font-size:1.3em; font-family: 'Cormorant SC', serif;
-", class: " btn btn-ghost-square-big mb-5 float-center" %>
-
 </div>
